@@ -6,6 +6,7 @@ import WelcomeMessage from './components/WelcomeMessage'
 import MainContent from './components/MainContent'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import UserProfile from './components/UserProfile'
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <Footer />
       <MainContent />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
