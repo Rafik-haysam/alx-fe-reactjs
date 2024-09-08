@@ -1,18 +1,23 @@
-// RecipeList component
-  import { useRecipeStore } from './recipeStore';
+// src/components/RecipeList.jsx
+import useRecipeStore from '../store/recipeStore'; // Corrected import
 
-  const RecipeList = () => {
-    const recipes = useRecipeStore(state => state.recipes);
+const RecipeList = () => {
+  const recipes = useRecipeStore((state) => state.recipes);
 
-    return (
-      <div>
-        {recipes.map(recipe => (
+  return (
+    <div>
+      {recipes.length === 0 ? (
+        <p>No recipes added yet.</p>
+      ) : (
+        recipes.map((recipe) => (
           <div key={recipe.id}>
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
           </div>
-        ))}
-      </div>
-    );
+        ))
+      )}
+    </div>
+  );
 };
-  export default RecipeList ;
+
+export default RecipeList;
